@@ -28,6 +28,34 @@ class EntryPayload(BaseModel):
     remark: str | None = None
 
 
+class CheckSubmitPayload(BaseModel):
+    """质量页为指定加工分区提交一次检查结果。"""
+
+    rule_id: int
+    job_id: int
+    partition: str
+    result: str  # 通过 / 未通过
+    request_id: str  # 幂等键：重复上报同一检查不产生第二份记录/交付
+    measured_value: str | None = None
+    evidence: str | None = None
+    is_recheck: bool = False  # 同一分区重验必须显式选择
+    base_seq: int | None = None  # 乐观并发：晚到的旧结果不能覆盖较新结论
+    confirm_complete: bool = False  # 同事务确认结果并归档分区
+
+
+class RuleAdjustPayload(BaseModel):
+    """规则调整：生成草稿新版本，确认后才会被新分区采用。"""
+
+    values: dict[str, Any] = Field(default_factory=dict)
+    change_note: str | None = None
+
+
+class PartitionActionPayload(BaseModel):
+    """ETL 页针对单个分区的动作载荷。"""
+
+    partition: str
+
+
 
 class MetricdefEntry(BaseModel):
     """指标口径明细结构。"""

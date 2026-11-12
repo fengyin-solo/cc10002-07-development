@@ -33,3 +33,43 @@ body { margin: 0; background: #f6f8fb; color: #1f2937; }
 .link { border: none; background: none; color: var(--brand); cursor: pointer; padding: 0; }
 .page-foot { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--muted); }
 .error-text { color: #b42318; }
+.ok-text { color: #027a48; }
+
+/* 质量准入：分区卡片、准入状态、抽屉表单 */
+.gate-section { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; margin-bottom: 14px; }
+.gate-section h3 { margin: 0 0 10px; font-size: 14px; }
+.gate-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+.partition-card { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; background: #fbfcfe; }
+.partition-card h4 { margin: 0 0 6px; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
+.partition-card dl { margin: 0; display: grid; grid-template-columns: 88px 1fr; gap: 4px 8px; font-size: 12px; }
+.partition-card dt { color: var(--muted); }
+.partition-card dd { margin: 0; word-break: break-all; }
+.badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px; border: 1px solid transparent; white-space: nowrap; }
+.badge-待检查 { background: #f1f5f9; color: #475569; border-color: #cbd5e1; }
+.badge-已阻断 { background: #fef3f2; color: #b42318; border-color: #fda29b; }
+.badge-已失败 { background: #7a271a; color: #fff; border-color: #7a271a; }
+.badge-待交付 { background: #fffaeb; color: #b54708; border-color: #fec84b; }
+.badge-已完成 { background: #ecfdf3; color: #027a48; border-color: #6ce9a6; }
+.badge-警告 { background: #fffaeb; color: #b54708; border-color: #fec84b; }
+.badge-阻断 { background: #fef3f2; color: #b42318; border-color: #fda29b; }
+.badge-通过 { background: #ecfdf3; color: #027a48; border-color: #6ce9a6; }
+.badge-未通过 { background: #fef3f2; color: #b42318; border-color: #fda29b; }
+.badge-草稿 { background: #f1f5f9; color: #475569; border-color: #cbd5e1; }
+.badge-已确认 { background: #eff8ff; color: #175cd3; border-color: #84caff; }
+.reason-list { margin: 6px 0 0; padding-left: 16px; font-size: 12px; color: #b42318; }
+.warn-list { margin: 6px 0 0; padding-left: 16px; font-size: 12px; color: #b54708; }
+.drawer-mask { position: fixed; inset: 0; background: rgba(15, 23, 42, .45); display: flex; justify-content: flex-end; z-index: 40; }
+.drawer { width: 440px; max-width: 92vw; background: #fff; height: 100%; overflow: auto; padding: 18px 20px; }
+.drawer h3 { margin: 0 0 12px; font-size: 15px; }
+.drawer label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+.drawer input, .drawer select, .drawer textarea { width: 100%; margin-top: 4px; border: 1px solid var(--border); border-radius: 6px; padding: 7px 9px; font-size: 13px; }
+.drawer textarea { min-height: 64px; }
+.drawer-actions { display: flex; gap: 10px; margin-top: 14px; }
+.checkbox-line { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #1f2937; }
+.checkbox-line input { width: auto; margin: 0; }
+.mini-table { width: 100%; border-collapse: collapse; font-size: 12px; background: #fff; }
+.mini-table th, .mini-table td { border: 1px solid var(--border); padding: 5px 7px; text-align: left; }
+.tabs { display: flex; gap: 8px; margin-bottom: 10px; }
+.tab { border: 1px solid var(--border); background: #fff; border-radius: 6px 6px 0 0; padding: 6px 14px; cursor: pointer; font-size: 13px; }
+.tab.active { background: var(--brand); color: #fff; border-color: var(--brand); }
+.muted-text { color: var(--muted); font-size: 12px; }
